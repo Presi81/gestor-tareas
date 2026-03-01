@@ -1,0 +1,214 @@
+/* styles.css */
+
+/* Reset básico */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+font-family: 'Inter', sans-serif;
+background: linear-gradient(135deg, #0f172a, #1e293b);
+min-height: 100vh;
+padding: 20px;
+}
+
+/* Header */
+header {
+text-align: center;
+color: white;
+margin-bottom: 30px;
+}
+
+h1 {
+font-size: 2.5rem;
+font-weight: 700;
+letter-spacing: 1px;
+}
+
+/* Contenedor principal */
+main {
+max-width: 700px;
+margin: 0 auto;
+background: white;
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* Sección de añadir tarea */
+.add-task {
+display: flex;
+gap: 10px;
+margin-bottom: 40px;
+}
+
+#taskInput {
+flex: 1;
+padding: 12px;
+border: 2px solid #e5e7eb;
+border-radius: 12px;
+font-size: 16px;
+transition: 0.2s;
+}
+
+#taskInput:focus {
+outline: none;
+border-color: #6366f1;
+box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+/* BOTÓN CON ANIMACIÓN */
+#addButton {
+padding: 12px 24px;
+background: linear-gradient(135deg, #6366f1, #8b5cf6);
+color: white;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+font-size: 16px;
+font-weight: 600;
+transition: all 0.25s ease;
+}
+
+#addButton:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Lista de tareas */
+.task-list h2 {
+color: #111827;
+margin-bottom: 15px;
+font-size: 1.3rem;
+}
+
+#taskList {
+list-style: none;
+}
+
+#taskList li {
+background: #f9fafb;
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 12px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: all 0.3s ease;
+}
+
+#taskList li:hover {
+transform: translateX(6px);
+background: #f3f4f6;
+}
+
+#taskList li span {
+  flex: 1;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: normal;          /* Permite saltos de línea */
+  word-break: break-word;       /* Rompe palabras largas */
+  overflow-wrap: break-word;    /* Evita desbordes */
+  line-height: 1.4;             /* Mejora la legibilidad */
+}
+
+
+#taskList li.completed span {
+text-decoration: line-through;
+opacity: 0.6;
+}
+
+/* Botón eliminar con animación */
+.delete-btn {
+background: #ef4444;
+color: white;
+border: none;
+padding: 8px 12px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.2s;
+}
+
+.delete-btn:hover {
+background: #dc2626;
+transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+text-align: center;
+color: white;
+margin-top: 30px;
+opacity: 0.8;
+}
+
+/*Tareas pendientes*/
+#taskCounter { 
+font-size: 1rem; 
+font-weight: 600; 
+color: #374151; 
+margin-bottom: 15px; 
+}
+
+/*filtros (Todas / Pendientes / Completadas)*/
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  background: #d1d5db;
+}
+
+.filters button.active {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.3);
+}
+
+/* Botón “Limpiar completadas”*/
+
+#clearCompleted {
+padding: 12px 24px;
+background: linear-gradient(135deg, #6366f1, #8b5cf6);
+color: white;
+border: none;
+border-radius: 12px;
+cursor: pointer;
+font-size: 16px;
+font-weight: 600;
+transition: all 0.25s ease;
+}
+
+#clearCompleted:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+/*Timestamp*/
+
+#taskList li .timestamp {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-right: 15px;
+  white-space: nowrap;
+}

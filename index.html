@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>📝 President_evil</h1>
+    <p>Ejercicio de gestor de tareas para el máster de programación con IA</p>
+  </header>
+
+  <main>
+
+    <!-- Añadir tarea -->
+    <section class="add-task">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Escribe una tarea...">
+      <button id="addButton">Añadir</button>
+    </section>
+
+    <!-- Contador -->
+    <p id="taskCounter">Tareas pendientes: 0</p>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <button data-filter="all">Todas</button>
+      <button data-filter="pending">Pendientes</button>
+      <button data-filter="completed">Completadas</button>
+    </div>
+
+    <!-- Lista de tareas -->
+    <section class="task-list">
+      <h2>Tareas</h2>
+      <ul id="taskList">
+        <!-- Las tareas aparecerán aquí -->
+      </ul>
+    </section>
+
+    <!-- Limpiar completadas -->
+    <button id="clearCompleted">🧹 Limpiar completadas</button>
+
+  </main>
+
+  <footer>
+    <p>Creado con ayuda de IA 🤖</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
