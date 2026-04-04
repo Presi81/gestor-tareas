@@ -6,7 +6,6 @@
   <title>Mi Gestor de Tareas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <header>
     <h1>📝 President_evil</h1>
@@ -14,43 +13,47 @@
   </header>
 
   <main>
-
-    <!-- Añadir tarea -->
     <section class="add-task">
-      <input
-        type="text"
-        id="taskInput"
-        placeholder="Escribe una tarea...">
+      <input type="text" id="taskInput" placeholder="Escribe una tarea...">
+      <select id="priorityInput">
+        <option value="baja">Baja</option>
+        <option value="media" selected>Media</option>
+        <option value="alta">Alta</option>
+      </select>
       <button id="addButton">Añadir</button>
+      <button id="loadExampleBtn">Cargar ejemplos</button>
     </section>
 
-    <!-- Contador -->
-    <p id="taskCounter">Tareas pendientes: 0</p>
+    <input type="text" id="searchInput" placeholder="🔍 Buscar tarea...">
 
-    <!-- Filtros -->
-    <div class="filters">
-      <button data-filter="all">Todas</button>
-      <button data-filter="pending">Pendientes</button>
-      <button data-filter="completed">Completadas</button>
+    <div id="loadingIndicator" style="display: none; text-align: center; margin: 10px; color: #6366f1; font-weight: bold;">
+      ⏳ Conectando con el servidor...
     </div>
 
-    <!-- Lista de tareas -->
+    <p id="taskCounter">Tareas pendientes: 0</p>
+
+    <div class="filters">
+      <button data-filter="all" class="active">Todas</button>
+      <button data-filter="pending">Pendientes</button>
+      <button data-filter="completed">Completadas</button>
+      <div class="filters">
+  <button id="reloadBtn" title="Recargar datos">🔄</button>
+</div>
+
+<div id="offlineAlert" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #ef4444; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; z-index: 2000;">
+  ⚠️ Sin conexión a Internet
+</div>
+    </div>
+
     <section class="task-list">
       <h2>Tareas</h2>
-      <ul id="taskList">
-        <!-- Las tareas aparecerán aquí -->
-      </ul>
+      <ul id="taskList"></ul>
     </section>
 
-    <!-- Limpiar completadas -->
-    <button id="clearCompleted">🧹 Limpiar completadas</button>
-
+    <button id="clearCompleted">Limpiar completadas</button>
   </main>
 
-  <footer>
-    <p>Creado con ayuda de IA 🤖</p>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
